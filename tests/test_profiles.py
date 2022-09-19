@@ -6,17 +6,17 @@ from context import sphrdis
 import numpy as np
 import unittest
 
-import sphrdis.models as models
+import sphrdis.profiles as profiles
 
 
-class TestModels(unittest.TestCase):
+class TestProfiles(unittest.TestCase):
     """
-    Test functions in `Models` module.
+    Test functions in `Profiles` module.
     """
 
     @staticmethod
     def name():
-        return "TestModels"
+        return "TestProfiles"
 
     def test(self):
 
@@ -25,18 +25,18 @@ class TestModels(unittest.TestCase):
 
         N = np.random.randint(2, 10)
 
-        def test(model, n_expected):
+        def test(profile, n_expected):
             r = np.random.rand(N)
-            n = model.partial_number_density(r)
+            n = profile.partial_number_density(r)
             self.assertTrue(
                 np.allclose(n, n_expected(r)),
                 msg=
-                "In {name}: partial number density for {model} not giving expected result. "
+                "In {name}: partial number density for {profile} not giving expected result. "
                 "RNG seed: {seed}.".format(name=self.name(),
-                                           model="Exponential",
+                                           profile="Exponential",
                                            seed=seed))
 
-        test(models.Exponential(), lambda r: np.exp(-2.0 * r) *
+        test(profiles.Exponential(), lambda r: np.exp(-2.0 * r) *
              (1.0 + 2.0 * r + 2.0 * r**2))
 
         print("\nAll tests in {s} passed.".format(s=self.name()))
