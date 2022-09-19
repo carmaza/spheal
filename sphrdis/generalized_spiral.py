@@ -9,10 +9,11 @@ class GeneralizedSpiral:
     The parameterized spiraling scheme introduced by Saff & Kuijlaars (1997).
     """
 
-    def __init__(self, N):
+    def __init__(self, N, randomize_orientation=True):
         self._N = N
         self._theta = np.empty(N)
         self._phi = np.empty(N)
+        self._randomize_orientation = randomize_orientation
 
         self._set_angles(self._theta, self._phi)
 
@@ -46,3 +47,8 @@ class GeneralizedSpiral:
         for k in range(N):
             phi[k] = 0.0 if k == 0 or k == N - 1 else phi[k - 1] + self._phase(
                 hk[k])
+
+        if self._randomize_orientation:
+            np.random.seed(N)
+            theta += 0.1 * np.random.randn(N)
+            phi += 0.1 * np.random.randn(N)
