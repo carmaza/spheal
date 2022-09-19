@@ -27,7 +27,7 @@ class TestProfiles(unittest.TestCase):
 
         def test(profile, n_expected):
             r = np.random.rand(N)
-            n = profile.partial_number_density(r)
+            n = profile.number_fraction(r)
             self.assertTrue(
                 np.allclose(n, n_expected(r)),
                 msg=
