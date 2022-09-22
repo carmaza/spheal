@@ -47,15 +47,12 @@ class TestGeneralizedSpiral(unittest.TestCase):
             "RNG seed: {seed}.".format(name=self.name(), seed=seed))
 
         theta_expected = np.empty(N)
-        phi_expected = np.empty(N)
+        for k in range(0, N):
+            theta_expected[k] = np.arccos(dis._h(k + 1))
 
-        for k in range(1, N + 1):
-            theta_expected[k - 1] = np.arccos(dis._h(k))
-            if k == 1 or k == N:
-                phi_expected[k - 1] = 0.0
-            else:
-                phi_expected[k -
-                             1] = phi_expected[k - 2] + dis._phase(dis._h(k))
+        phi_expected = np.zeros(N)
+        for k in range(1, N - 1):
+            phi_expected[k] = phi_expected[k - 1] + dis._phase(dis._h(k + 1))
 
         self.assertTrue(
             np.allclose(dis.theta, theta_expected),
