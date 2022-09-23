@@ -24,7 +24,7 @@ class TestGeneralizedSpiral(unittest.TestCase):
         np.random.seed(seed)
 
         N = np.random.randint(4, 10)
-        dis = GeneralizedSpiral(N, False)
+        dis = GeneralizedSpiral(N)
 
         self.assertTrue(
             N == dis.N,
