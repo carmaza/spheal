@@ -6,17 +6,17 @@ from context import sphrdis
 import numpy as np
 import unittest
 
-import sphrdis.coordinates as coordinates
+import sphrdis.euclidean as euclidean
 
 
-class TestCoordinates(unittest.TestCase):
+class TestEuclidean(unittest.TestCase):
     """
-    Test functions in `coordinates` module.
+    Test functions in `euclidean` module.
     """
 
     @staticmethod
     def name():
-        return "TestCoordinates"
+        return "TestEuclidean"
 
     def test(self):
 
@@ -30,7 +30,7 @@ class TestCoordinates(unittest.TestCase):
         phi = np.random.rand(N)
 
         coords = np.empty((N, 3))
-        coordinates.cartesian_from_spherical(coords, rad, the, phi)
+        euclidean.cartesian_from_spherical(coords, rad, the, phi)
 
         coords_expected = np.empty((N, 3))
         for k in range(N):
