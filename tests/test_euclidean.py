@@ -9,14 +9,14 @@ import unittest
 import sphrdis.euclidean as euclidean
 
 
-class TestEuclidean(unittest.TestCase):
+class TestCartesianFromSpherical(unittest.TestCase):
     """
-    Test functions in `euclidean` module.
+    Test `spherical_from_cartesian` function.
     """
 
     @staticmethod
     def name():
-        return "TestEuclidean"
+        return "TestSphericalFromCartesian"
 
     def test(self):
 
@@ -30,6 +30,7 @@ class TestEuclidean(unittest.TestCase):
         phi = np.random.rand(N)
 
         coords = np.empty((N, 3))
+
         euclidean.cartesian_from_spherical(coords, rad, the, phi)
 
         coords_expected = np.empty((N, 3))
@@ -42,6 +43,38 @@ class TestEuclidean(unittest.TestCase):
             np.allclose(coords, coords_expected),
             msg=
             "In {name}: cartesian_from_spherical not giving expected result. "
+            "RNG seed: {seed}.".format(name=self.name(), seed=seed))
+
+        print("\nAll tests in {s} passed.".format(s=self.name()))
+
+
+class TestRotateAbout(unittest.TestCase):
+    """
+    Test `rotate_about` function.
+    """
+
+    @staticmethod
+    def name():
+        return "TestRotateAbout"
+
+    def test(self):
+        seed = np.random.randint(0, 1e6)
+        np.random.seed(seed)
+
+        angle = np.random.randn()
+        k = np.random.randn(3)
+        k = k / np.sqrt(np.dot(k, k))
+
+        v = np.array([0.0, 1.0, 0.0])
+        v_copy = v.copy()
+        euclidean.rotate_about(v, k, angle)
+
+        v_expected = np.cos(angle) * v_copy + np.cross(k, v_copy) * np.sin(
+            angle) + k * np.dot(k, v_copy) * (1.0 - np.cos(angle))
+
+        self.assertTrue(
+            np.allclose(v, v_expected),
+            msg="In {name}: rotate_about not giving expected result. "
             "RNG seed: {seed}.".format(name=self.name(), seed=seed))
 
         print("\nAll tests in {s} passed.".format(s=self.name()))
