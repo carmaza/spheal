@@ -14,10 +14,6 @@ class TestProfiles(unittest.TestCase):
     Test functions in `Profiles` module.
     """
 
-    @staticmethod
-    def name():
-        return "TestProfiles"
-
     def test(self):
 
         seed = np.random.randint(0, 1e6)
@@ -31,15 +27,11 @@ class TestProfiles(unittest.TestCase):
             self.assertTrue(
                 np.allclose(n, n_expected(r)),
                 msg=
-                "In {name}: partial number density for {profile} not giving expected result. "
-                "RNG seed: {seed}.".format(name=self.name(),
-                                           profile="Exponential",
-                                           seed=seed))
+                "partial number density for {profile} not giving expected result. "
+                "RNG seed: {seed}.".format(profile="Exponential", seed=seed))
 
         test(profiles.Exponential(), lambda r: np.exp(-2.0 * r) *
              (1.0 + 2.0 * r + 2.0 * r**2))
-
-        print("\nAll tests in {s} passed.".format(s=self.name()))
 
 
 if __name__ == "__main__":

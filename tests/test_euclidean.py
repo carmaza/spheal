@@ -14,10 +14,6 @@ class TestCartesianFromSpherical(unittest.TestCase):
     Test `spherical_from_cartesian` function.
     """
 
-    @staticmethod
-    def name():
-        return "TestSphericalFromCartesian"
-
     def test(self):
 
         seed = np.random.randint(0, 1e6)
@@ -41,21 +37,14 @@ class TestCartesianFromSpherical(unittest.TestCase):
 
         self.assertTrue(
             np.allclose(coords, coords_expected),
-            msg=
-            "In {name}: cartesian_from_spherical not giving expected result. "
-            "RNG seed: {seed}.".format(name=self.name(), seed=seed))
-
-        print("\nAll tests in {s} passed.".format(s=self.name()))
+            msg="cartesian_from_spherical not giving expected result. "
+            "RNG seed: {seed}.".format(seed=seed))
 
 
 class TestRotateAbout(unittest.TestCase):
     """
     Test `rotate_about` function.
     """
-
-    @staticmethod
-    def name():
-        return "TestRotateAbout"
 
     def test(self):
         seed = np.random.randint(0, 1e6)
@@ -72,12 +61,9 @@ class TestRotateAbout(unittest.TestCase):
         v_expected = np.cos(angle) * v_copy + np.cross(k, v_copy) * np.sin(
             angle) + k * np.dot(k, v_copy) * (1.0 - np.cos(angle))
 
-        self.assertTrue(
-            np.allclose(v, v_expected),
-            msg="In {name}: rotate_about not giving expected result. "
-            "RNG seed: {seed}.".format(name=self.name(), seed=seed))
-
-        print("\nAll tests in {s} passed.".format(s=self.name()))
+        self.assertTrue(np.allclose(v, v_expected),
+                        msg="rotate_about not giving expected result. "
+                        "RNG seed: {seed}.".format(seed=seed))
 
 
 if __name__ == "__main__":
