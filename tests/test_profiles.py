@@ -21,7 +21,7 @@ class TestProfiles(unittest.TestCase):
 
         N = np.random.randint(2, 10)
 
-        def test(profile, n_expected):
+        def test(profile, n_expected, r90_expected):
             r = np.random.rand(N)
             n = profile.number_fraction(r)
             self.assertTrue(
@@ -30,8 +30,13 @@ class TestProfiles(unittest.TestCase):
                 "partial number density for {profile} not giving expected result. "
                 "RNG seed: {seed}.".format(profile="Exponential", seed=seed))
 
+            self.assertTrue(
+                np.allclose(profile.r90, r90_expected),
+                msg="R_90 for {profile} not giving expected result. "
+                "RNG seed: {seed}.".format(profile="Exponential", seed=seed))
+
         test(profiles.Exponential(), lambda r: np.exp(-2.0 * r) *
-             (1.0 + 2.0 * r + 2.0 * r**2))
+             (1.0 + 2.0 * r + 2.0 * r**2), 2.661)
 
 
 if __name__ == "__main__":
