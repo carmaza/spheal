@@ -6,7 +6,7 @@ from context import sphrdis
 import numpy as np
 import unittest
 
-from sphrdis.generalized_spiral import GeneralizedSpiral
+import sphrdis.distributions as distributions
 
 
 class TestGeneralizedSpiral(unittest.TestCase):
@@ -20,7 +20,7 @@ class TestGeneralizedSpiral(unittest.TestCase):
         np.random.seed(seed)
 
         N = np.random.randint(4, 10)
-        dis = GeneralizedSpiral(N)
+        dis = distributions.GeneralizedSpiral(N)
 
         self.assertTrue(N == dis.N,
                         msg="class member N differs from expected value. "
