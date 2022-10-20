@@ -31,6 +31,6 @@ def particle_number(numbers, profile, N, r):
         raise TypeError(msg)
 
     f = profile.number_fraction(r)
-    numbers[:] = N * np.array(
-        [f[j - 1] - f[j] for j in range(1,
-                                        len(numbers) + 1)])
+    numbers[:] = np.rint(
+        N * np.array([f[j] - f[j + 1]
+                      for j in range(0, len(numbers))])).astype(numbers.dtype)

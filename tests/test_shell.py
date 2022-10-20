@@ -35,7 +35,7 @@ class TestParticleNumber(unittest.TestCase):
         f = profile.number_fraction(r)
         numbers_expected = np.empty(nshells, dtype=np.uint32)
         for j in range(0, nshells):
-            numbers_expected[j] = N * (f[j] - f[j + 1])
+            numbers_expected[j] = np.rint(N * (f[j] - f[j + 1]))
 
         self.assertTrue(np.allclose(numbers, numbers_expected),
                         msg="shell numbers not giving expected result. "
