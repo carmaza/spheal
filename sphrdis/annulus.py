@@ -7,6 +7,27 @@ import numpy as np
 class Annulus:
     """
     The 2-d region between two concentric circles.
+
+    This class represents a natural unit for the tesselation of a disk
+    consisting of cells whose boundaries are straight lines and circle arcs.
+
+    Parameters
+    ----------
+
+    `extents`: tuple
+    A 2-d tuple containing the radial extents of the annulus.
+
+    `n_patches`: int
+    The number of azimuthal patches into which to divide the annulus.
+
+    Members
+    -------
+
+    `extents`: tuple
+    The radial extents of the annulus.
+
+    `patch_extents`: tuple
+    The angualr extents of the patches that constitute the annulus.
     """
 
     def __init__(self, extents: tuple, n_patches: int):
@@ -16,15 +37,8 @@ class Annulus:
 
     @property
     def extents(self) -> tuple:
-        """
-        The radial extents of the annulus.
-        """
         return self._extents
 
     @property
     def patch_extents(self) -> tuple:
-        """
-        The angualr extents of the patches that constitute the annulus.
-        The annulus is divided into equal-shape patches.
-        """
         return self._patch_extents
