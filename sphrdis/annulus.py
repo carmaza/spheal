@@ -8,7 +8,7 @@ class Annulus:
     """
     The 2-d region between two concentric circles.
 
-    This class represents a natural unit for the tesselation of a disk
+    This class represents a natural unit for the tessellation of a disk
     consisting of cells whose boundaries are straight lines and circle arcs.
 
     Parameters
@@ -28,6 +28,11 @@ class Annulus:
 
     `patch_extents`: tuple
     The angualr extents of the patches that constitute the annulus.
+
+    Notes
+    -----
+
+    - Each patch has exactlu the same shape.
     """
 
     def __init__(self, extents: tuple, n_patches: int):
