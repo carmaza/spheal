@@ -27,7 +27,7 @@ class TestAnnulus(unittest.TestCase):
                          extents,
                          msg="\n\nwhen testing {f}.\nRNG seed: {seed}.".format(
                              f="extents", seed=seed))
-        self.assertEqual(annulus.n_patches,
+        self.assertEqual(annulus.patch_number,
                          n_patches,
                          msg="\n\nwhen testing {f}.\nRNG seed: {seed}.".format(
                              f="number of patches", seed=seed))

@@ -26,7 +26,7 @@ class Annulus:
     `extents`: tuple
     The radial extents of the annulus.
 
-    `n_patches`: int
+    `patch_number`: int
     The number of patches in the annulus.
 
     `patch_extents`: tuple
@@ -48,7 +48,7 @@ class Annulus:
         return self._extents
 
     @property
-    def n_patches(self) -> int:
+    def patch_number(self) -> int:
         return len(self._patch_extents) - 1
 
     @property
