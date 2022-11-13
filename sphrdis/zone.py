@@ -26,6 +26,9 @@ class Zone:
     `extents`: tuple
     The zenithal extents of the zone.
 
+    `patch_number`: int
+    The number of patches in the zone.
+
     `patch_extents`: tuple
     The azimuthal extents of the patches that constitute the zone.
 
@@ -43,6 +46,10 @@ class Zone:
     @property
     def extents(self) -> tuple:
         return self._extents
+
+    @property
+    def patch_number(self) -> int:
+        return len(self._patch_extents) - 1
 
     @property
     def patch_extents(self) -> tuple:

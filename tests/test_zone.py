@@ -27,6 +27,10 @@ class TestZone(unittest.TestCase):
                          extents,
                          msg="\n\nwhen testing {f}.\nRNG seed: {seed}.".format(
                              f="extents", seed=seed))
+        self.assertEqual(zone.patch_number,
+                         n_patches,
+                         msg="\n\nwhen testing {f}.\nRNG seed: {seed}.".format(
+                             f="patch number", seed=seed))
         self.assertEqual(tuple(2.0 * np.pi * m / n_patches
                                for m in range(n_patches + 1)),
                          zone.patch_extents,
