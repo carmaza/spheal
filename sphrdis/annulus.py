@@ -35,7 +35,7 @@ class Annulus:
     Notes
     -----
 
-    - Each patch has exactlu the same shape.
+    - Each patch has exactly the same shape.
     """
 
     def __init__(self, extents: tuple, n_patches: int):
