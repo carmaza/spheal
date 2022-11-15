@@ -43,6 +43,9 @@ class Zone:
         self._patch_extents = tuple(2.0 * np.pi * m / n_patches
                                     for m in range(n_patches + 1))
 
+    def __lt__(self, other):
+        return self.extents[0] < other.extents[0]
+
     @property
     def extents(self) -> tuple:
         return self._extents

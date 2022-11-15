@@ -37,6 +37,10 @@ class TestZone(unittest.TestCase):
                          msg="\n\nwhen testing {f}.\nRNG seed: {seed}.".format(
                              f="patch extents", seed=seed))
 
+        self.assertTrue(Zone((0.4, 0.5), 10) > Zone((0.2, 0.4), 10),
+                        msg="\n\nwhen testing {f}.\nRNG seed: {seed}.".format(
+                            f="< operator", seed=seed))
+
 
 if __name__ == "__main__":
     unittest.main()
