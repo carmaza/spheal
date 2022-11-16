@@ -8,7 +8,7 @@ import unittest
 
 import spheal.shell as shell
 
-from spheal.profiles import Exponential
+from spheal.radial import Exponential
 
 
 class TestParticleNumber(unittest.TestCase):

@@ -6,12 +6,12 @@ from context import spheal
 import numpy as np
 import unittest
 
-import spheal.profiles as profiles
+import spheal.radial as radial
 
 
-class TestProfiles(unittest.TestCase):
+class TestRadial(unittest.TestCase):
     """
-    Test functions in `Profiles` module.
+    Test functions in `radial` module.
     """
 
     def test(self):
@@ -35,7 +35,7 @@ class TestProfiles(unittest.TestCase):
                 msg="R_90 for {profile} not giving expected result. "
                 "RNG seed: {seed}.".format(profile="Exponential", seed=seed))
 
-        test(profiles.Exponential(), lambda r: np.exp(-2.0 * r) *
+        test(radial.Exponential(), lambda r: np.exp(-2.0 * r) *
              (1.0 + 2.0 * r + 2.0 * r**2), 2.661)
 
 
