@@ -35,7 +35,7 @@ class TestRadial(unittest.TestCase):
                 msg="R_90 for {profile} not giving expected result. "
                 "RNG seed: {seed}.".format(profile="Exponential", seed=seed))
 
-        test(radial.Exponential(), lambda r: np.exp(-2.0 * r) *
+        test(radial.Exponential(), lambda r: 1.0 - np.exp(-2.0 * r) *
              (1.0 + 2.0 * r + 2.0 * r**2), 2.661)
 
 

@@ -14,5 +14,5 @@ class Exponential:
         return self._r90
 
     @staticmethod
-    def number_fraction(r):
-        return np.exp(-2.0 * r) * (1.0 + 2.0 * r * (1.0 + r))
+    def particle_number(r):
+        return 1.0 - np.exp(-2.0 * r) * (1.0 + 2.0 * r * (1.0 + r))
