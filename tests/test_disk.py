@@ -1,12 +1,12 @@
 # Distributed under the MIT License.
 # See LICENSE for details.
 
-from context import sphrdis
+from context import spheal
 
 import numpy as np
 import unittest
 
-from sphrdis.disk import Disk
+from spheal.disk import Disk
 
 
 class TestDisk(unittest.TestCase):

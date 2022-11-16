@@ -1,12 +1,12 @@
 # Distributed under the MIT License.
 # See LICENSE for details.
 
-from context import sphrdis
+from context import spheal
 
 import numpy as np
 import unittest
 
-import sphrdis.euclidean as euclidean
+import spheal.euclidean as euclidean
 
 
 class TestCartesianFromSpherical(unittest.TestCase):

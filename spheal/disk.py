@@ -4,7 +4,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-from sphrdis.annulus import Annulus
+from spheal.annulus import Annulus
 
 
 class Disk:

@@ -1,12 +1,12 @@
 # Distributed under the MIT License.
 # See LICENSE for details.
 
-from context import sphrdis
+from context import spheal
 
 import numpy as np
 import unittest
 
-from sphrdis.annulus import Annulus
+from spheal.annulus import Annulus
 
 
 class TestAnnulus(unittest.TestCase):

@@ -1,14 +1,14 @@
 # Distributed under the MIT License.
 # See LICENSE for details.
 
-from context import sphrdis
+from context import spheal
 
 import numpy as np
 import unittest
 
-import sphrdis.shell as shell
+import spheal.shell as shell
 
-from sphrdis.profiles import Exponential
+from spheal.profiles import Exponential
 
 
 class TestParticleNumber(unittest.TestCase):

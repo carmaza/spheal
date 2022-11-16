@@ -1,12 +1,12 @@
 # Distributed under the MIT License.
 # See LICENSE for details.
 
-from context import sphrdis
+from context import spheal
 
 import numpy as np
 import unittest
 
-from sphrdis.zone import Zone
+from spheal.zone import Zone
 
 
 class TestZone(unittest.TestCase):

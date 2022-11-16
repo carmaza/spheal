@@ -7,11 +7,11 @@ with open('README.md', 'r') as readme_file:
     long_description = readme_file.read()
 
 setup(
-    name='sphrids',
+    name='spheal',
     version='0.1.0',
-    description="Particle spherical distributions.",
+    description="Spherical Elements & Algorithms.",
     long_description=long_description,
-    url='https://github.com/carmaza/sphrdis',
+    url='https://github.com/carmaza/spheal',
     author='Cristóbal Armaza',
     author_email='ca455@cornell.edu',
     classifiers=[
