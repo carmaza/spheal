@@ -30,7 +30,7 @@ def particle_number(numbers, profile, N, r):
         msg = "Type of numbers should be np.uint32. Got " + str(numbers.dtype)
         raise TypeError(msg)
 
-    f = profile.number_fraction(r)
+    f = profile.particle_number(r)
     numbers[:] = np.rint(
         N * np.array([f[j] - f[j + 1]
                       for j in range(0, len(numbers))])).astype(numbers.dtype)

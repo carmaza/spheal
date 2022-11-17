@@ -32,7 +32,7 @@ class TestParticleNumber(unittest.TestCase):
 
         shell.particle_number(numbers, profile, N, r)
 
-        f = profile.number_fraction(r)
+        f = profile.particle_number(r)
         numbers_expected = np.empty(nshells, dtype=np.uint32)
         for j in range(0, nshells):
             numbers_expected[j] = np.rint(N * (f[j] - f[j + 1]))
