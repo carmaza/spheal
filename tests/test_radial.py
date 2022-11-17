@@ -23,7 +23,7 @@ class TestRadial(unittest.TestCase):
 
         def test(profile, n_expected, r90_expected):
             r = np.random.rand(N)
-            n = profile.number_fraction(r)
+            n = profile.particle_number(r)
             self.assertTrue(
                 np.allclose(n, n_expected(r)),
                 msg=

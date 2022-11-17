@@ -3,8 +3,10 @@
 
 import numpy as np
 
+from spheal.radial.profile import Profile
 
-class Exponential:
+
+class Exponential(Profile):
 
     def __init__(self):
         self._r90 = 2.661
