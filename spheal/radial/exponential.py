@@ -9,7 +9,7 @@ from spheal.radial.profile import Profile
 class Exponential(Profile):
 
     def __init__(self):
-        self._r90 = 2.661
+        self._r90 = 2.661160168917105
 
     @property
     def r90(self):
