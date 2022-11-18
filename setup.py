@@ -20,5 +20,5 @@ setup(
     ],
     keywords='spherical',
     packages=find_packages(),
-    install_requires=['matplotlib>=3.5.3', 'numpy>=1.23.0'],
-    python_requires='>=3.8')
+    install_requires=['matplotlib>=3.6.0', 'numpy>=1.23.0'],
+    python_requires='>=3.10')
