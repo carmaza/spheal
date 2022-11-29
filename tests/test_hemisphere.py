@@ -36,7 +36,7 @@ class TestHemisphere(unittest.TestCase):
                          msg="\n\nwhen testing {f}.\nRNG seed: {seed}.".format(
                              f="patch number", seed=seed))
 
-        # TO-DO: area test not passing. Likely related to not being able to
+        # Issue #1: area test not passing. Likely related to not being able to
         # reproduce Table 6, line 5 (zenithal angles).
 
         # # Check that the surface area of all inner polar caps per patch equals
@@ -62,7 +62,7 @@ class TestHemisphere(unittest.TestCase):
                 patch_numbers.append(partial_number)
             return patch_numbers
 
-        # Get with Beckers & Beckers 2012, Table 5: Hemisphere.
+        # Get Beckers & Beckers 2012, Table 5: Hemisphere.
         hemisphere_table_5 = Hemisphere(radius=1.,
                                         n_patches=288,
                                         patch_aspect=1.)
