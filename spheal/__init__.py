@@ -3,3 +3,4 @@
 
 from .disk import Disk
 from .euclidean import *
+from .hemisphere import Hemisphere
