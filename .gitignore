@@ -1,3 +1,6 @@
 # Files resulting from plotters.
 *.pdf
 fig*
+
+/build*
+*info
