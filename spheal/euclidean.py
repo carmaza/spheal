@@ -23,6 +23,33 @@ def cartesian_from_spherical(coords, r, theta, phi):
     coords[:, 2] = r[:] * np.cos(theta[:])
 
 
+def spherical_from_cartesian(theta, phi, x, y, z, r=None):
+    """
+    Compute spherical angles of the given Cartesian coordinates.
+
+    Arguments
+    ---------
+
+    `theta, phi` : ndarray, ndarray
+    The spherical angles.
+
+    `x, y, z` : ndarray, ndarray, ndarray
+    The Cartesian coordinates.
+
+    `r` : ndarray (optional, default: None)
+    The radial coordinate, precomputed as r = sqrt(x*x + y*y + z*z). If not
+    given, this function will compute it internally. Note that this argument
+    is a convenience, for r is usually expected to be needed in other
+    calculations outside of this function.
+
+    """
+    if r is None:
+        r = np.sqrt(x * x + y * y + z * z)
+
+    theta[:] = np.arccos(z[:] / r[:])
+    phi[:] = np.arctan2(y[:], x[:])
+
+
 def rotate_about(v, k, a):
     """
     Rotate a given vector according to Rodrigues' axis-angle formula.

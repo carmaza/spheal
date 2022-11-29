@@ -41,6 +41,39 @@ class TestCartesianFromSpherical(unittest.TestCase):
             "RNG seed: {seed}.".format(seed=seed))
 
 
+class TestSphericalFromCartesian(unittest.TestCase):
+    """
+    Test `spherical_from_cartesian` function.
+    """
+
+    def test(self):
+
+        seed = np.random.randint(0, 1e6)
+        np.random.seed(seed)
+
+        N = np.random.randint(4, 10)
+
+        x = np.random.rand(N)
+        y = np.random.rand(N)
+        z = np.random.rand(N)
+        r = np.sqrt(x * x + y * y + z * z)
+
+        theta, phi = np.empty_like(x), np.empty_like(x)
+        euclidean.spherical_from_cartesian(theta, phi, x, y, z)
+
+        theta_expected = np.arccos(z / r)
+        self.assertTrue(
+            np.allclose(theta, theta_expected),
+            msg="spherical_from_cartesian theta not giving expected result. "
+            "RNG seed: {seed}.".format(seed=seed))
+
+        phi_expected = np.arctan2(y, x)
+        self.assertTrue(
+            np.allclose(phi, phi_expected),
+            msg="spherical_from_cartesian phi not giving expected result. "
+            "RNG seed: {seed}.".format(seed=seed))
+
+
 class TestRotateAbout(unittest.TestCase):
     """
     Test `rotate_about` function.
