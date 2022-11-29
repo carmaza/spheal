@@ -11,7 +11,7 @@ import spheal.euclidean as euclidean
 
 class TestCartesianFromSpherical(unittest.TestCase):
     """
-    Test `spherical_from_cartesian` function.
+    Test `cartesian_from_spherical` function.
     """
 
     def test(self):
@@ -21,19 +21,19 @@ class TestCartesianFromSpherical(unittest.TestCase):
 
         N = np.random.randint(4, 10)
 
-        rad = np.random.rand(N)
-        the = np.random.rand(N)
+        r = np.random.rand(N)
+        theta = np.random.rand(N)
         phi = np.random.rand(N)
 
         coords = np.empty((N, 3))
 
-        euclidean.cartesian_from_spherical(coords, rad, the, phi)
+        euclidean.cartesian_from_spherical(coords, r, theta, phi)
 
         coords_expected = np.empty((N, 3))
         for k in range(N):
-            coords_expected[k, 0] = rad[k] * np.sin(the[k]) * np.cos(phi[k])
-            coords_expected[k, 1] = rad[k] * np.sin(the[k]) * np.sin(phi[k])
-            coords_expected[k, 2] = rad[k] * np.cos(the[k])
+            coords_expected[k, 0] = r[k] * np.sin(theta[k]) * np.cos(phi[k])
+            coords_expected[k, 1] = r[k] * np.sin(theta[k]) * np.sin(phi[k])
+            coords_expected[k, 2] = r[k] * np.cos(theta[k])
 
         self.assertTrue(
             np.allclose(coords, coords_expected),
