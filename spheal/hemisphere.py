@@ -9,7 +9,7 @@ from spheal.zone import Zone
 
 class Hemisphere:
     """
-    Equal-area disk tessellation based on Beckers & Beckers (2012).
+    Equal-area hemisphere tessellation based on Beckers & Beckers (2012).
 
     This tesselation accommodates an exact given number of patches on the
     hemisphere. The hemisphere is divided into zones of variable number of
