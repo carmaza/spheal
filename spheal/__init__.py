@@ -5,3 +5,4 @@ from .annulus import Annulus
 from .disk import Disk
 from .euclidean import *
 from .hemisphere import Hemisphere
+from .zone import Zone
