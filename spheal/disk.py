@@ -169,5 +169,5 @@ class Disk:
                     linewidth=0.3)
 
         ax.set_aspect(1.0)
-        plt.savefig("{}.{}".format(name, fmt), bbox_inches="tight", dpi=300)
+        plt.savefig(f"{name}.{fmt}", bbox_inches="tight", dpi=300)
         plt.close(fig)
