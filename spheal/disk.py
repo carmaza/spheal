@@ -75,7 +75,7 @@ class Disk:
         k_lm1, r_lm1 = n_patches, radius
 
         self._annuli = []
-        while (l < lmax):
+        while l < lmax:
             l += 1
             k_l = self._k_l(k_lm1)
             r_l = self._r_l(r_lm1, k_lm1, k_l)
