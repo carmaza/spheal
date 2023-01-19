@@ -1,5 +1,9 @@
 # Distributed under the MIT License.
 # See LICENSE for details.
+"""
+Defines class `Disk`.
+
+"""
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -14,26 +18,11 @@ class Disk:
     This tesselation accommodates an exact given number of patches on the disk.
     The disk is divided into annuli of variable number of patches (i.e. no
     congruency), and every patch throughout the disk has exactly the same
-    surface area. 
-
-    Parameters
-    ----------
-
-    `radius`: float
-    The radius of the disk.
-
-    `n_patches`: int
-    The total number of patches to use in the tessellation.
-
-    `aspect`: float
-    The constant aspect ratio that the algorithm tries to give to each patch.
-
-    `draw`: bool (default: False)
-    Whether to draw the resulting tessellation to a PDF.
+    surface area.
 
     Members
     -------
-    
+
     `annuli`: list
     The annuli that constitute the disk.
 
@@ -64,6 +53,23 @@ class Disk:
                  draw=False,
                  filename="Disk",
                  fmt="pdf"):
+        """
+        Parameters
+        ----------
+
+        `radius`: float
+        The radius of the disk.
+
+        `n_patches`: int
+        The total number of patches to use in the tessellation.
+
+        `aspect`: float
+        The constant aspect ratio that the algorithm tries to give to each patch.
+
+        `draw`: bool (default: False)
+        Whether to draw the resulting tessellation to a PDF.
+
+        """
         self._radius = radius
         self._patch_aspect = patch_aspect
 
@@ -94,14 +100,26 @@ class Disk:
 
     @property
     def annuli(self):
+        """
+        The annuli covering the disk.
+
+        """
         return self._annuli
 
     @property
     def radius(self):
+        """
+        The radius of the disk.
+
+        """
         return self._radius
 
     @property
     def patch_number(self):
+        """
+        The number of patches covering the disk.
+
+        """
         return sum(annulus.patch_number for annulus in self._annuli)
 
     # Eq. (1)
@@ -121,6 +139,16 @@ class Disk:
     def draw(self, name="Disk", fmt="pdf"):
         """
         Draw tesselation to file.
+
+        Parameters
+        ----------
+
+        `name` : str (default: 'Disk')
+        The name of the figure to draw.
+
+        `fmt` : str (default: 'pdf')
+        The format of the figure to draw.
+
         """
         dense_phi = np.linspace(0., 2. * np.pi, 100)
         dense_cos, dense_sin = np.cos(dense_phi), np.sin(dense_phi)
