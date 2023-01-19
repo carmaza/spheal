@@ -1,5 +1,18 @@
 # Distributed under the MIT License.
 # See LICENSE for details.
+"""
+Defines the following functions related to vectors in Euclidean space:
+
+- `cartesian_from_spherical(coords, r, theta, phi)`
+  Computes Cartesian coordinates from spherical coordinates.
+
+- spherical_from_cartesian(theta, phi, x, y, z, r=None)`
+  Computes spherical coordinates from Cartesian coordinates.
+
+- `rotate_about(v, k a)`
+  Rotates a vector using Rodrigues's axis-angle formula.
+
+"""
 
 import numpy as np
 
@@ -52,7 +65,7 @@ def spherical_from_cartesian(theta, phi, x, y, z, r=None):
 
 def rotate_about(v, k, a):
     """
-    Rotate a given vector according to Rodrigues' axis-angle formula.
+    Rotate a given vector according to Rodrigues's axis-angle formula.
 
     Parameters
     ---------
