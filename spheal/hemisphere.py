@@ -143,5 +143,5 @@ class Hemisphere:
                     linewidth=0.3)
 
         ax.set_aspect(1.0)
-        plt.savefig("{}.pdf".format(name), bbox_inches="tight")
+        plt.savefig(f"{name}.pdf", bbox_inches="tight")
         plt.close(fig)
