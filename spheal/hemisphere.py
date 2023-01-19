@@ -76,7 +76,7 @@ class Hemisphere:
             np.sqrt(n_patches * patch_aspect / np.pi)).astype(dtype=np.int64)
 
         self._zones = []
-        while (l < lmax):
+        while l < lmax:
             l += 1
             theta_l = self._theta_l(theta_lm1, r_lm1, k_lm1)
             r_l = self._r(theta_l)
