@@ -144,4 +144,4 @@ class Hemisphere:
 
         ax.set_aspect(1.0)
         plt.savefig("{}.pdf".format(name), bbox_inches="tight")
-        plt.close()
+        plt.close(fig)
