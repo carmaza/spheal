@@ -8,7 +8,7 @@ def cartesian_from_spherical(coords, r, theta, phi):
     """
     Compute Cartesian coordinates of the given spherical coordinates.
 
-    Arguments
+    Parameters
     ---------
 
     `coords` : ndarray(N, 3)
@@ -27,7 +27,7 @@ def spherical_from_cartesian(theta, phi, x, y, z, r=None):
     """
     Compute spherical angles of the given Cartesian coordinates.
 
-    Arguments
+    Parameters
     ---------
 
     `theta, phi` : ndarray, ndarray
@@ -54,7 +54,7 @@ def rotate_about(v, k, a):
     """
     Rotate a given vector according to Rodrigues' axis-angle formula.
 
-    Arguments
+    Parameters
     ---------
 
     `v` : ndarray(3)
