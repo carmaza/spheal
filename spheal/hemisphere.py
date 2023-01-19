@@ -14,7 +14,7 @@ class Hemisphere:
     This tesselation accommodates an exact given number of patches on the
     hemisphere. The hemisphere is divided into zones of variable number of
     patches (i.e. no congruency), and every patch throughout the hemisphere
-    has exactly the same surface area. 
+    has exactly the same surface area.
 
     Parameters
     ----------
@@ -33,7 +33,7 @@ class Hemisphere:
 
     Members
     -------
-    
+
     `zones`: list
     The zones that constitute the hemisphere.
 
