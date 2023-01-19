@@ -1,5 +1,9 @@
 # Distributed under the MIT License.
 # See LICENSE for details.
+"""
+Defines class `Hemisphere`.
+
+"""
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -15,21 +19,6 @@ class Hemisphere:
     hemisphere. The hemisphere is divided into zones of variable number of
     patches (i.e. no congruency), and every patch throughout the hemisphere
     has exactly the same surface area.
-
-    Parameters
-    ----------
-
-    `radius`: float
-    The radius of the hemisphere.
-
-    `n_patches`: int
-    The total number of patches to use in the tessellation.
-
-    `aspect`: float
-    The constant aspect ratio that the algorithm tries to give to each patch.
-
-    `draw`: bool (default: False)
-    Whether to draw the resulting tessellation to a PDF.
 
     Members
     -------
@@ -62,6 +51,23 @@ class Hemisphere:
                  n_patches: int,
                  patch_aspect: float,
                  draw=False):
+        """
+        Parameters
+        ----------
+
+        `radius`: float
+        The radius of the hemisphere.
+
+        `n_patches`: int
+        The total number of patches to use in the tessellation.
+
+        `aspect`: float
+        The constant aspect ratio that the algorithm tries to give to each patch.
+
+        `draw`: bool (default: False)
+        Whether to draw the resulting tessellation to a PDF.
+
+        """
         self._radius = radius
         self._patch_aspect = patch_aspect
 
@@ -97,14 +103,26 @@ class Hemisphere:
 
     @property
     def zones(self):
+        """
+        The zones covering the hemisphere.
+
+        """
         return self._zones
 
     @property
     def radius(self):
+        """
+        The radius of the hemisphere.
+
+        """
         return self._radius
 
     @property
     def patch_number(self):
+        """
+        The number of patches covering the hemisphere.
+
+        """
         return sum(zone.patch_number for zone in self._zones)
 
     # Eq. (1)
@@ -123,6 +141,13 @@ class Hemisphere:
     def draw_lambert_proj(self, name="Projection"):
         """
         Draw Lambert projection of the tesselation to PDF.
+
+        Parameters
+        ----------
+
+        `name` : str (default: 'Projection')
+        The name of the figure to draw.
+
         """
         dense_phi = np.linspace(0., 2. * np.pi, 100)
         dense_cos, dense_sin = np.cos(dense_phi), np.sin(dense_phi)
