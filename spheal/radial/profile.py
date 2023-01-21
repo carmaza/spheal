@@ -11,6 +11,7 @@ class Profile(metaclass=abc.ABCMeta):
     def r90(self):
         pass
 
+    @staticmethod
     @abc.abstractmethod
     def particle_number(r):
         pass
