@@ -1,5 +1,9 @@
 # Distributed under the MIT License.
 # See LICENSE for details.
+"""
+Defines class `GeneralizedSpiral`.
+
+"""
 
 import numpy as np
 
@@ -7,6 +11,19 @@ import numpy as np
 class GeneralizedSpiral:
     """
     The parameterized spiraling scheme introduced by Saff & Kuijlaars (1997).
+
+    Attributes
+    ----------
+
+    `N` : float
+    The number of particles in the distribution.
+
+    `theta` : ndarray
+    The zenithal coordinate of every particle.
+
+    `phi` : ndarray
+    The azimuthal coordinate of every particle.
+
     """
 
     def __init__(self, N):
@@ -18,14 +35,26 @@ class GeneralizedSpiral:
 
     @property
     def N(self):
+        """
+        The number of particles in the distribution.
+
+        """
         return self._N
 
     @property
     def theta(self):
+        """
+        The zenithal cordinate of every particle.
+
+        """
         return self._theta
 
     @property
     def phi(self):
+        """
+        The azimuthal coordinate of every particle.
+
+        """
         return self._phi
 
     def _h(self, k):
