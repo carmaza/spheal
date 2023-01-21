@@ -73,5 +73,5 @@ class GeneralizedSpiral:
         theta[:] = np.arccos(hk)
 
         for k in range(N):
-            phi[k] = 0.0 if k == 0 or k == N - 1 else phi[k - 1] + self._phase(
-                hk[k])
+            phi[k] = 0.0 if k in (0,
+                                  N - 1) else phi[k - 1] + self._phase(hk[k])
