@@ -1,10 +1,11 @@
 # Distributed under the MIT License.
 # See LICENSE for details.
 
+import unittest
+
 from context import spheal
 
 import numpy as np
-import unittest
 
 import spheal.euclidean as euclidean
 
