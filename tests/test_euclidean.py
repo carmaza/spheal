@@ -3,11 +3,9 @@
 
 import unittest
 
-from context import spheal
-
 import numpy as np
 
-import spheal.euclidean as euclidean
+from spheal import euclidean
 
 
 class TestCartesianFromSpherical(unittest.TestCase):

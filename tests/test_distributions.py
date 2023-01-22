@@ -3,11 +3,9 @@
 
 import unittest
 
-from context import spheal
-
 import numpy as np
 
-import spheal.distributions as distributions
+from spheal import distributions
 
 
 class TestGeneralizedSpiral(unittest.TestCase):

@@ -3,12 +3,9 @@
 
 import unittest
 
-from context import spheal
-
 import numpy as np
 
-import spheal.shell as shell
-
+from spheal import shell
 from spheal.radial import Exponential
 
 

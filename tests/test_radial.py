@@ -3,11 +3,9 @@
 
 import unittest
 
-from context import spheal
-
 import numpy as np
 
-import spheal.radial as radial
+from spheal import radial
 
 
 class TestRadial(unittest.TestCase):

@@ -3,8 +3,6 @@
 
 import unittest
 
-from context import spheal
-
 import numpy as np
 
 from spheal.annulus import Annulus
