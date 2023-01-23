@@ -1,5 +1,12 @@
 # Distributed under the MIT License.
 # See LICENSE for details.
+"""
+Defines the following functions involving spherical shells:
+
+- `particle_number(numbers, profile, N, r)`
+  Calculates the number of particles in the shell for a given profile.
+
+"""
 
 import numpy as np
 
